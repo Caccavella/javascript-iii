@@ -22,6 +22,7 @@ Each employee can:
 call your class Employee and receive all the data in the constructor in the order listed
 */
 
+
 class Employee {
    constructor(first_name, last_name, email, age) {
        this.first_name = first_name,
@@ -29,14 +30,14 @@ class Employee {
        this.email = email,
        this.age = age
    }
-   makeWidget() {
-       return this.first_name + this.last_name + 'Widget'
+   makeWidget(name) {
+       return this.first_name + " " + this.last_name + " " + 'Widget'
    }
 }
-var anthonyCaccavella = new Employee('Anthony', 'Caccavella', 'anthony.caccavella@gmail.com','25')
+var anthonyCaccavella = new Employee('Anthony', 'Caccavella', 'anthony.caccavella@gmail.com', 25)
 console.log(anthonyCaccavella) ;
 
-console.log(anthonyCaccavella.makeWidget)
+console.log(anthonyCaccavella.makeWidget())
 
 /*
 
