@@ -19,7 +19,7 @@ for(var key in values) {
   console.log(values[key])
 }
 
-In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
+//In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
 
 for(var key in values) {
   console.log(key)
@@ -34,7 +34,7 @@ for(var key in values) {
 
 function showValues( obj ) {
  for(var key in obj) {
-   return(key.concat)
+   return(obj[key].concat)
  } // CODE HERE
 }
 
@@ -47,7 +47,7 @@ function showValues( obj ) {
 function greaterThan10 (obj) {
   for (var key in obj) {
     if (obj[key] > 10) {
-      obj[key] 0;
+     obj[key] = 0;
     }
   } return obj;
 }
@@ -58,8 +58,13 @@ function greaterThan10 (obj) {
 // ========================
 
 
-// Write a function called double that takes in an object. Write a for in loop that loops over the object and changes every value to be itself multipled by 2. Return the updated object.
-
+// Write a function called double that takes in an object. Write a for in loop that loops over the object and changes
+// every value to be itself multipled by 2. Return the updated object.
+function double(obj) {
+  for(var key in obj) {
+    return (obj[key] * 2)
+  }
+}
 // CODE HERE
 
 
@@ -67,8 +72,15 @@ function greaterThan10 (obj) {
 // ========================
 
 
-// Write a function called secrets that will take in an object. Create an empty string variable. Write a for in loop that loops over the object. If the property name starts with an 'sh', concatenate the value to the string variable. By the end of the for in loop, you should have a sentence, return that sentence.
-
+// Write a function called secrets that will take in an object. Create an empty string variable. 
+//Write a for in loop that loops over the object. If the property name starts with an 'sh', concatenate
+// the value to the string variable. By the end of the for in loop, you should have a sentence, return that sentence.
+function secrets(obj) {
+  var str = '';
+  for (var key in obj) {
+    obj.filter('sh')
+  }
+}
 // CODE HERE
 
 

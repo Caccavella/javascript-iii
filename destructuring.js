@@ -36,10 +36,10 @@ function greeting( obj ) {
 //The property values will be numbers. Use object destructuring to save the property values to new variables. 
 //Sum up the values and return the total number.
 function totalPopulation(obj) {
-
+var { utah, california, texas, arizona} = obj;
   return utah + california + texas + arizona;
 }
-var { utah, california, texas, arizona} = obj;
+
 
   // CODE HERE
 
@@ -52,27 +52,39 @@ var { utah, california, texas, arizona} = obj;
 //variables to an array and return the array. 
 
  function ingrediants(obj) {
-
+ var {carb, fat, protein} = ingrediants.obj
+ var newArray = []
+newArray.push(carb,fat,protein);
+ return newArray;
  } // CODE HERE
-return var ['carb', 'fat', 'protein'] = ingrediants.obj
+
 
 // ========================
 
 
-// Now we will use object destructuring as the function's parameter instead of destructuring the object inside of the function declaration. See the example below:
+// Now we will use object destructuring as the function's parameter instead of destructuring
+// the object inside of the function declaration. See the example below:
 
 // function example( {one, two, three} ) {
 //   return one + two + three
 // }
 
-// Write a function called largeNumbers that will take a destructured object as it's parameter. The object properties will be named first, second, and third and their values will be numbers. Find the smallest number of the three and return that number.
+// Write a function called largeNumbers that will take a destructured object as it's parameter. 
+//The object properties will be named first, second, and third and their values will be numbers. 
+//Find the smallest number of the three and return that number.
 
-  // CODE HERE
+function largeNumbers( {first,second,third}) {
+  return Math.min(...obj);
+}  // CODE HERE
 
 
 // ========================
 
 
-// Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
-
+// Write a function called numberGroups that will take a destructured object as it's parameter. 
+//The object properties will be named a, b, and c and their values will be arrays of numbers. 
+//Find the longest array and return that array. 
+function numberGroups({a,b,b}) {
+  return Math.max(...obj);
+}
   // CODE HERE
