@@ -87,7 +87,8 @@ function secrets(obj) {
 // ========================
 
 
-// Sometimes it's needed to delete object properties. All you need is the word delete before a reference to the object property value. Uncomment the example below to see a for in loop deleting all the properties inside an object.
+// Sometimes it's needed to delete object properties. All you need is the word delete before a reference
+// to the object property value. Uncomment the example below to see a for in loop deleting all the properties inside an object.
 
 // var deleteAllThethings = {
 //   one: 1,
@@ -121,6 +122,12 @@ var deleteTheBigNumbers = {
   third: 110,
   fourth: 200
 }
+for (var key in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[key] > 100) {
+  delete(key)
+  }
+}
+ 
 
 // CODE HERE
 
@@ -128,8 +135,15 @@ var deleteTheBigNumbers = {
 // ========================
 
 
-// Write a function called startsWithK that takes an object as a parameter. Write a for in loop to loop over the object. If any property name starts with k, delete that property. Return the updated object.
-
+// Write a function called startsWithK that takes an object as a parameter. Write a for in loop to loop over
+// the object. If any property name starts with k, delete that property. Return the updated object.
+function startsWithK(obj) {
+  for (var key in obj) {
+    if (obj[key].startsWith('K') ) {
+delete(obj[key]);
+    }
+  }
+}
 // CODE HERE
 
 
@@ -137,7 +151,15 @@ var deleteTheBigNumbers = {
 // ========================
 
 
-// Write a function called hiddenTreasure that takes in an object. Write a for in loop that loops over this object. Each property will have a sentence as it's value. If the property value does not contain the word 'treasure', delete the property. Return the updated object.
+// Write a function called hiddenTreasure that takes in an object. Write a for in loop that loops over this 
+//object. Each property will have a sentence as it's value. If the property value does not contain the word 'treasure', 
+//delete the property. Return the updated object.
 // (hint: the method includes() may be of use...)
-
+function hiddenTreasure(obj) {
+  for (var key in obj) {
+    if (!obj[key].includes('treasure') ) {
+delete(obj[key]);
+    }
+  }
+}
 // CODE HERE
