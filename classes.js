@@ -152,3 +152,19 @@ It can :
       It should set decrease wear_and_tear_count by 10, and set needs_reboot to false
 
 */
+class Machine {
+    constructor(){
+        widgets_made_count: 0
+        wear_and_tear_count: 0
+        needs_reboot: false
+    }
+    makeWidgets(num){
+       return widgets_made_count + num, wear_and_tear_count + .02;
+    }
+    fixMachine(){
+        if (Machine.needs_reboot = true) {
+           reboot() {
+               return wear_and_tear_count - 10, needs_reboot = false
+           } 
+        }
+}
