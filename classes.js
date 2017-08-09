@@ -6,8 +6,8 @@ Classes are a tool for building similar objects over and over again.
 They are a construct that helps your organize your code.
 
 Let's work with some employees at a company.
-You work for Widget Co.  They have hundreds of employees. 
-Make a class to help us build all of the employees.  
+You work for Widget Co.  They have hundreds of employees.
+Make a class to help us build all of the employees.
 Each employee has:
 - first_name
 - last_name
@@ -22,7 +22,21 @@ Each employee can:
 call your class Employee and receive all the data in the constructor in the order listed
 */
 
+class Employee {
+   constructor(first_name, last_name, email, age) {
+       this.first_name = first_name,
+       this.last_name = last_name,
+       this.email = email,
+       this.age = age
+   }
+   makeWidget() {
+       return this.first_name + this.last_name + 'Widget'
+   }
+}
+var anthonyCaccavella = new Employee('Anthony', 'Caccavella', 'anthony.caccavella@gmail.com','25')
+console.log(anthonyCaccavella) ;
 
+console.log(anthonyCaccavella.makeWidget)
 
 /*
 
@@ -40,6 +54,23 @@ They can (methods) :
 call your class Manager
 
 */
+class Manager {
+    constructor(first_name, last_name, email, age, reports) {
+       this.first_name = first_name,
+       this.last_name = last_name,
+       this.email = email,
+       this.age = age,
+       this.reports = []
+    }
+hire(name){
+    this.reports.push(name)
+}
+fire(name, index, alwaysZero){
+    this.reports.splice(name, index, 0)
+}
+}
+var bossMan = new Manager('Jason','Bourne','jason.b@blah.com',32, {Anthony Caccavella})
+console.log(bossMan)
 
 
 /*
@@ -63,7 +94,9 @@ call you class ProgressiveManager
 */
 
 
-/* 
+
+
+/*
 BLACK DIAMOND
 Widget Co has a factory that makes widgets.
 Factories have Machines
@@ -77,7 +110,7 @@ It has :
 It can :
 - makeWidgets
     : This function takes in a number and increases widgets_made_count by that amount
-      It also increases wear_and_tear_count by 1 for every 50 
+      It also increases wear_and_tear_count by 1 for every 50
 - fixMachine
     : This function sets needs_reboot to true
 - reboot
@@ -85,4 +118,3 @@ It can :
       It should set decrease wear_and_tear_count by 10, and set needs_reboot to false
 
 */
-
