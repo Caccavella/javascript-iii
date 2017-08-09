@@ -30,7 +30,7 @@ class Employee {
        this.email = email,
        this.age = age
    }
-   makeWidget(name) {
+   makeWidget() {
        return this.first_name + " " + this.last_name + " " + 'Widget'
    }
 }
@@ -55,13 +55,14 @@ They can (methods) :
 call your class Manager
 
 */
+
 class Manager {
     constructor(first_name, last_name, email, age, reports) {
        this.first_name = first_name,
        this.last_name = last_name,
        this.email = email,
        this.age = age,
-       this.reports = []
+       this.reports = []reports.push(reports)
     }
 hire(name){
     this.reports.push(name)
@@ -70,8 +71,9 @@ fire(name, index, alwaysZero){
     this.reports.splice(name, index, 0)
 }
 }
-var bossMan = new Manager('Jason','Bourne','jason.b@blah.com',32, {Anthony Caccavella})
-console.log(bossMan)
+var bossMan = new Manager('Jason','Bourne','jason.b@blah.com',32, 'Anthony Caccavella')
+bossMan.hire('NewHire')
+console.log(bossMan.reports)
 
 
 /*
@@ -93,8 +95,39 @@ Everytime they fire an employee they get a bonus of $100 add to their .
 
 call you class ProgressiveManager
 */
+class ProgressiveManager {
+    constructor(first_name, last_name, email, age, reports, title, bonus) {
+       this.first_name = first_name,
+       this.last_name = last_name,
+       this.email = email,
+       this.age = age,
+       this.reports = [],
+       this.title = 'Not a manager',
+       this.bonus = 0
+    }
+     
+hire(name){
+    this.reports.push(name)
+    }
+fire(name, index, alwaysZero){
+    this.reports.splice(name, index, 0)
+    this.bonus = this.bonus + 100;
+}
+evaluation(){
+     if (this.reports.length >= 1 && this.reports.length <= 3) {
+        this.title = 'Barely Manager';
+    } else if (this.reports.length >= 4 && this.reports.length <= 10) {
+        this.title = 'Mostly Manager';
+    } else if (this.reports.length >= 11 && this.reports.length <= 50) {
+        this.title = 'Manager';
+    } else if (this.reports.length >= 51 && this.reports.length <= 100) {
+        this.title = 'Manager Plus';
+    } else if (this.reports.length >= 101) {
+        this.title = 'Bestest Manager';
+    }
+}
 
-
+}
 
 
 /*
