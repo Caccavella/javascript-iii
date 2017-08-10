@@ -41,7 +41,7 @@ let postTaxPrices = prices.map(function (price) {
 
 const populations = [8175133, 3792621, 2695598, 2100263]
 
-let totalPopulation  = populations.reduce((function(sum, value) {
+let totalPopulation  = populations.reduce(function(sum, value) {
   return sum + value;
 }, 0)
 
@@ -61,7 +61,13 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 {"monster":"Sandmush","CP":262},{"monster":"Sandmush","CP":25},{"monster":"Charaflier","CP":215},
 {"monster":"Ponylopse","CP":125},{"monster":"Bulbabunny","CP":178}]
 
-let myStrongest // Your code here
+let myStrongest = cpSorting.filter(function(cp, value){
+  var newMonsters = []
+if (monstersInYourPocket[cp] > 200) {
+  newMonsters.push();
+}
+return newMonsters;
+}) // Your code here
 
 // Below we have an array of orders.  but they all have different tax rates.
 // We want to make a new array of total prices.
@@ -71,7 +77,9 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 {"price":72,"tax":0.14},{"price":51,"tax":0.09},{"price":89,"tax":0.15},
 {"price":48,"tax":0.13}]
 
-let ordersTotal // Your code here
+let ordersTotal = totals.reduce(function(sum, value){
+return (orders[sum] + orders[value]);
+})  // Your code here
 
 // Below we have an array of purchases
 // We want to create a total for the purcahses, but only want to total Bob's

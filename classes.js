@@ -67,8 +67,8 @@ class Manager {
 hire(name){
     this.reports.push(name)
 }
-fire(name, index, alwaysZero){
-    this.reports.splice(name, index, 0)
+fire(name, index){
+    this.reports.splice(name, index)
 }
 }
 var bossMan = new Manager('Jason','Bourne','jason.b@blah.com',32, 'Anthony Caccavella')
@@ -154,16 +154,18 @@ It can :
 */
 class Machine {
     constructor(){
-        widgets_made_count: 0
-        wear_and_tear_count: 0
-        needs_reboot: false
+        widgets_made_count: 0;
+        wear_and_tear_count: 0;
+        needs_reboot: false;
     }
     makeWidgets(num){
        return widgets_made_count + num, wear_and_tear_count + .02;
     }
     fixMachine(){
         if (Machine.needs_reboot = true) {
-           reboot() {
+        }
+    }
+    reboot() {
                return wear_and_tear_count - 10, needs_reboot = false
            } 
         }
