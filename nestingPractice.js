@@ -87,4 +87,4 @@ var cat = {
 
 
 // Code here
-var grumpyActivity {activities} = catFriends.activities;
+var grumpyActivity = cat.catFriends[0].activities[1];
