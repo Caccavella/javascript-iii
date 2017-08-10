@@ -30,7 +30,19 @@ var employees = [{
 //  2. If the employee's first name is Lorie, change her department to 'HR'.
 //  3. Return the updated employee array.
 
-
+function employeeUpdater() {
+  for (var i = 0; i < employees.length; i++) {
+    if (employees.firstName == 'Theo') {
+      delete employees.firstName[i];
+      return employees;
+    } else if (employees.firstName == 'Lorie') {
+      employees[i].department = 'HR';
+      return employees;
+    } else {
+      return employees;
+    }
+  }
+}
 
 
 
