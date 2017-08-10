@@ -31,18 +31,15 @@ var employees = [{
 //  3. Return the updated employee array.
 
 function employeeUpdater() {
-  for (var i = 0; i < employees.length; i++) {
-    if (employees.firstName == 'Theo') {
-      delete employees.firstName[i];
-      return employees;
-    } else if (employees.firstName == 'Lorie') {
+  for (var i = employees.length -1; i >= 0 ; i--) {
+    if (employees[i].firstName === 'Theo') {
+      employees.splice(i,1);
+    } if (employees[i].firstName === 'Lorie') {
       employees[i].department = 'HR';
-      return employees;
-    } else {
-      return employees;
     }
-  }
+  }return employees;
 }
+
 
 
 
@@ -55,17 +52,16 @@ function employeeUpdater() {
 // 2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array. Loop over the array 
 //from front to back.
 // 3. Return the updated array.
-  var newarr = (function removeDuplicates(workplaceAccidents){
-  var m = {}, newarr = []
-  for (var i=0; i < workplaceAccidents.length; i++) {
-    var v = workplaceAccidents[i];
-    if (!m[v]) {
-      newarr.push(v);
-      m[v]=true;
-    }
-  }
-  return newarr;
-})(arr);
+ function removeDuplicates() {
+   for (var i = workplaceAccidents.length - 1; i >= 0; i--) {
+     let num = workplaceAccidents[i];
+     for (var j = 0; j < i-1; j++ {
+       if(workplaceAccidents[j] === num) {
+          workplaceAccidents.splice(i,1);
+       }
+     }
+   }
+ }
 
 
 var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
